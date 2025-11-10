@@ -1,42 +1,106 @@
 #root {
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.dotgothic16-regular {
+  font-family: "DotGothic16", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.space-mono-regular {
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.space-mono-bold {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.space-mono-regular-italic {
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.space-mono-bold-italic {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-style: italic;
+}
+
+h1 {
+  font-family: "DotGothic16", sans-serif;
+  font: 72;
+  color: black; 
+}
+
+h2 {
+  font-family: "DotGothic16", sans-serif;
+  font: 24;
+  color: black; 
+
+}
+
+.Header {
   text-align: center;
+  padding: 24px 0;
+  width: 100vw;
+  margin: 0 0;
+  background-color: rgb(214, 231, 250);
+  position: relative;
+  top: 0px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
+.MainGrid {
+    display: grid;
+    grid-template-columns: 0.4fr 0.3fr 0.3fr;
+    gap: 24px;
+    align-items: stretch;
+    justify-items: stretch;
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
 }
 
 .card {
-  padding: 2em;
+  padding: 1em;
+  background-color: whitesmoke;
+  border-radius: 8px;
+  box-shadow: 1em;
+  min-width: 0;
+  min-height: 0;
+  margin: 1em;
+  display: grid;
+  border: 1px solid gray;
 }
 
-.read-the-docs {
-  color: #888;
+.bodyText {
+  font-family: "Space Mono", monospace;
+  font-size: 16;
+  color: black;
+}
+
+.bodyBold {
+  font-family: "Space Mono", monospace;
+  font-size: 16;
+  font-style: bold;
+  color: black;
+}
+
+.logItem {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  padding: 0.25em 1em;
+  background-color: rgb(255, 235, 235);
+  border-radius: 6px;
+  margin: 1em 0;
+}
+
+.logItem:hover {
+  border: 5px solid rgb(244, 192, 114);
 }
