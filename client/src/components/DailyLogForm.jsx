@@ -1,9 +1,18 @@
+import { useState } from "react";
+import Dropdown from "./Dropdown";
+
 export default function DailyLogForm({ habits, logs, createLog, deleteLog }) {
-  const today = new Date().toISOString().slice(0,10);
+  const today = new Date().toISOString().slice(0, 10);
   const todayByHabit = new Map();
   for (const l of logs) {
     if (l.date_logged === today) todayByHabit.set(l.habit_id, l);
   }
+
+  const [openDropdowns, setOpenDropdowns] = useState({});
+
+  const handleOpen = (habitId) => {
+    setOpenDropdowns((prev) => ({ ...prev, [habitId]: !prev[habitId] }));
+  };
 
   async function toggle(habitId) {
     const existing = todayByHabit.get(habitId);
@@ -17,18 +26,34 @@ export default function DailyLogForm({ habits, logs, createLog, deleteLog }) {
   return (
     <div className="card">
       <h2>Log Habits Today ({today})</h2>
-      <ul style={{ listStyle:"none", padding:0 , alignItems: "start"}}>
-        {habits.map(h => (
-          <li key={h.id} className = "logItem">
-            <input
-              type="checkbox"
-              checked={todayByHabit.has(h.id)}
-              onChange={() => toggle(h.id)}
-            />
-            <div className = "logContent">
-              <div className = "bodyBold">{h.title}</div>
-              <div className = "bodyText">{h.description}</div>
-            </div>
+      <ul style={{ listStyle: "none", padding: 0, alignItems: "start" }}>
+        {habits.map((h) => (
+          <li key={h.id} className="logItem">
+            <div style={{ display: "flex", flexDirection: "row" }}>
+              <div style={{ display: "flex", alignItems: "baseline" }}>
+                <input
+                  type="checkbox"
+                  checked={todayByHabit.has(h.id)}
+                  onChange={() => toggle(h.id)}
+                />
+                <div className="logContent">
+                  <div className = "compactLog">
+                    <div className="bodyBold">{h.title}</div>
+                    <Dropdown open={!!openDropdowns[h.id]} onClick={() => handleOpen(h.id)} />
+                  </div>
+                  <div>
+                    {openDropdowns[h.id] ? (
+                      <div className="logDescription">
+                        <div className="bodyText">{h.description}</div>
+                      </div>
+                    ) : null} 
+                  </div>
+                    
+                </div>
+                </div>
+                
+              </div>
+              
           </li>
         ))}
       </ul>

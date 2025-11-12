@@ -81,6 +81,7 @@ function App() {
       <div>
         <Header />
         
+        <div className = 'container'>
         <MainGrid 
 
           left = {<DailyLogForm
@@ -90,33 +91,14 @@ function App() {
             deleteLog={deleteLog} 
           />}
 
-          center = {<AddHabitForm onCreate={createHabit} defaultUserId={1}/>}
+          center = {<SideImage src={'/menacing-cat.gif'}/>}
           
-          right = {<SideImage src={'/menacing-cat.gif'}/>}
+          right = {<AddHabitForm onCreate={createHabit} defaultUserId={1}/>}
         
         />
         
         <WeekSection title="Habit Logs This Week">
           <WeekView>
-                    {/* {days.map((iso) => (
-              <DayCard key={iso} dateISO={iso}>
-                {habits.map((h) => {
-                  const done = logs.some(
-                    (l) => l.habit_id === h.id && l.date_logged === iso && l.status === "done"
-                  );
-                  return (
-                    <HabitChip
-                      key={`${iso}-${h.id}`}
-                      text={h.title}
-                      state={done ? "done" : "default"}
-                      onClick={() =>
-                        createLog({ habit_id: h.id, date_logged: iso, status: "done" })
-                      }
-                    />
-                  );
-                })}
-              </DayCard>
-            ))} */}
                 {days.map((iso) => (
                 <DayCard key={iso} dateISO={iso}>
                   {habits.map((h) => {
@@ -138,7 +120,7 @@ function App() {
               ))}
           </WeekView>
         </WeekSection>
-        
+        </div>
       </div>
         
 
