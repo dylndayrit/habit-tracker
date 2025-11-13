@@ -111,7 +111,7 @@ h2 {
 .formItem {
   display: flex;
   flex-direction: column;
-  padding: 0.5em;
+  padding: 0.8em 0.5em;
   border-radius: 8px;
   margin: 0.5em 0; 
   background-color: rgb(238, 238, 255);
