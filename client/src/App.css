@@ -42,19 +42,20 @@ h1 {
 
 h2 {
   font-family: "DotGothic16", sans-serif;
-  font: 24px;
+  font-size: 24px;
   color: black; 
-
+  margin: 0em;
 }
 
 .Header {
   text-align: center;
-  padding: 24px 0;
+  padding: 24px;
   width: 100vw;
   margin: 0 0;
   background-color: rgb(214, 231, 250);
   position: relative;
   top: 0px;
+  max-height: 20%;
 }
 
 .container {
@@ -62,10 +63,10 @@ h2 {
 }
 .MainGrid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
     gap: 24px;
     align-items: stretch;
     justify-items: stretch;
+    grid: 1fr / 1fr 1fr;
 
 }
 
@@ -73,11 +74,18 @@ h2 {
   padding: 1em;
   background-color: whitesmoke;
   border-radius: 8px;
-  box-shadow: 1em;
   min-width: 0;
   min-height: 0;
   display: grid;
+  gap: 1em;
   border: 1px solid gray;
+}
+
+ul {
+  display: grid;
+  margin: 0px;
+  padding: 0px;
+  gap: 1em;
 }
 
 .bodyText {
@@ -101,7 +109,6 @@ h2 {
   background-color: rgb(254, 240, 255);
   border-radius: 6px;
   border: 1px solid rgb(172, 22, 164);
-  margin: 1em 0;
 }
 
 .logItem:hover {
@@ -113,7 +120,6 @@ h2 {
   flex-direction: column;
   padding: 0.8em 0.5em;
   border-radius: 8px;
-  margin: 0.5em 0; 
   background-color: rgb(238, 238, 255);
   border: 1px solid blue;
 }

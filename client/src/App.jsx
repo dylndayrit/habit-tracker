@@ -90,8 +90,6 @@ function App() {
             createLog={createLog}
             deleteLog={deleteLog} 
           />}
-
-          center = {<SideImage src={'/menacing-cat.gif'}/>}
           
           right = {<AddHabitForm onCreate={createHabit} defaultUserId={1}/>}
         

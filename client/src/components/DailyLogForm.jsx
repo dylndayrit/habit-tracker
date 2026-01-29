@@ -24,9 +24,13 @@ export default function DailyLogForm({ habits, logs, createLog, deleteLog }) {
   }
 
   return (
-    <div className="card">
-      <h2>Log Habits Today ({today})</h2>
-      <ul style={{ listStyle: "none", padding: 0, alignItems: "start" }}>
+    <div className="card" style={{ gap: 10, alignSelf: "stretch", justifySelf: "stretch"}}>
+
+      <div>
+        <h2>Log Habits Today ({today})</h2>
+      </div>
+      
+      <ul style={{ listStyle: "none", padding: 0, alignItems: "start", margin:"none" }}>
         {habits.map((h) => (
           <li key={h.id} className="logItem">
             <div style={{ display: "flex", flexDirection: "row" }}>
